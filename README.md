@@ -4,7 +4,18 @@ This is an example of using a custom buildkite bootstrap script to run an entire
 
 ## Installing
 
-Download `bootstrap.sh` and put it someone on your agent host. Set `bootstrap-script-path` to reference the bootstrap script. If running, you will need to restart your agent so it picks up the new config
+Download `bootstrap.sh` and put it someone on your agent host. Set `bootstrap-script-path` to reference the bootstrap script. If running, you will need to restart your agent so it picks up the new config.
+
+Alternately, you can run an agent in a docker container that uses this bootstrap to run jobs in containers. Meta.
+
+```bash
+docker run --rm \
+  -v "$PWD/bootstrap.sh:/bootstrap.sh:ro" \
+  -v "/var/run/docker.sock:/var/run/docker.sock" \
+  -e "BUILDKITE_AGENT_TOKEN" \
+  -e "BUILDKITE_BOOTSTRAP_SCRIPT_PATH=/bootstrap.sh" \
+  buildkite/agent:3.0.1
+``
 
 ## How it works
 
