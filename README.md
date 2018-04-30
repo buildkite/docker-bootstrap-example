@@ -15,7 +15,7 @@ docker run --rm \
   -e "BUILDKITE_AGENT_TOKEN" \
   -e "BUILDKITE_BOOTSTRAP_SCRIPT_PATH=/bootstrap.sh" \
   buildkite/agent:3.0.1
-``
+```
 
 ## How it works
 
