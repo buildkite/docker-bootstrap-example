@@ -38,3 +38,7 @@ The plan is to private a proxied socket with https://github.com/buildkite/sockgu
 Things running in the container can still access local network things which can lead to [SSRF attacks](https://www.owasp.org/index.php/Server_Side_Request_Forgery) that disclose things like Amazon's cloud meta-data endpoints or other secrets available over http.
 
 The plan is to solve this with firewall rules and something like https://github.com/lyft/metadataproxy.
+
+## Credit
+
+Thanks to [@haines](https://github.com/haines) for his work on https://github.com/haines/buildkite-docker-bootstrap which this is derived from 🙇🏼‍♂️
